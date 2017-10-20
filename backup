@@ -1,0 +1,9 @@
+XDG_DESKTOP_DIR="/mnt/windows/Users/eryk/Desktop"
+XDG_DOWNLOAD_DIR="/mnt/windows/Users/eryk/Downloads"
+XDG_TEMPLATES_DIR="/mnt/windows/Users/eryk/Szablony"
+XDG_PUBLICSHARE_DIR="$HOME/Publiczny"
+XDG_MUSIC_DIR="/mnt/windows/Users/eryk/Music"
+XDG_PICTURES_DIR="/mnt/windows/Users/eryk/Pictures"
+XDG_VIDEOS_DIR="/mnt/windows/Users/eryk/Videos"
+XDG_DOCUMENTS_DIR="/mnt/windows/Users/eryk/Documents"
+
