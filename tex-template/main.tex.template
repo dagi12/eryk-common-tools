@@ -1,0 +1,133 @@
+\documentclass[a4paper,12pt]{article}
+
+%% Language and font encodings
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\selectlanguage{polish}
+
+%% Sets page size and margins
+%\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=4cm,asymmetric]{geometry}
+\usepackage{geometry}
+
+
+%% Useful packages
+\usepackage[fleqn]{amsmath}%[fleqn]
+\usepackage{xfrac} %\sfrac{}{}
+
+\usepackage{titlesec}%titles
+\titlelabel{\thetitle.\quad}
+\let\savenumberline\numberline
+\def\numberline#1{\savenumberline{#1.}}
+\usepackage{etoolbox}%dots in TOC
+\makeatletter
+\patchcmd{\l@section}
+  {\hfil}
+  {\leaders\hbox{\normalfont$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill}
+  {}{}
+\makeatother
+
+\usepackage{caption,graphicx}
+\usepackage{float}
+\usepackage{sidecap}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usetikzlibrary{trees}
+\usetikzlibrary{arrows,positioning,shapes,fit,calc,decorations.pathreplacing}
+\usetikzlibrary{graphs}
+\usetikzlibrary{graphs.standard}
+\usepackage{forest}
+\usepackage{tikzscale}
+\usepackage{pgfgantt} %Diagramy gantta http://bay.uchicago.edu/CTAN/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf
+\usepackage{pgf}
+\usepackage{caption}
+
+\usepackage{fancybox}
+\usepackage{listings}
+
+\usepackage[colorinlistoftodos]{todonotes} %http://mirror.unl.edu/ctan/macros/latex/contrib/todonotes/todonotes.pdf
+
+\usepackage{array,longtable}
+
+\newcommand\floor[1]{\lfloor#1\rfloor} %PODŁOGA -> \floor
+\newcommand\ceil[1]{\lceil#1\rceil} %SUFIT -> \ceil
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{\thepage}
+\lhead{\leftmark}
+\rfoot{\thepage}
+\lfoot{\rightmark}
+
+%http://tex.stackexchange.com/questions/64170/which-package-to-use-for-writing-algorithms
+\usepackage{algorithm}% http://ctan.org/pkg/algorithms
+\usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+\newcommand{\var}[1]{{\ttfamily#1}}% variable
+
+\algnewcommand\algorithmicforeach{\textbf{for each}} %Algorithm foreach
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+
+\usepackage{amsthm}
+\usepackage[inline]{enumitem} %enumerations
+\usepackage{multicol}
+
+\theoremstyle{definition}%~ %%% <-  Note that space!
+\newtheorem{lemma}{Lemat} %\begin{lemma} ... \end{lemma} LEMAT(?)
+\newtheorem{remark}{Wniosek}%\begin{remark} ... \end{remark} WNIOSEK 
+%\newtheorem*{remark*}{Wniosek}%\begin{remark} ... \end{remark} WNIOSEK bez liczby
+\newtheorem{theorem}{Twierdzenie}%\begin{theorem} ... \end{theorem}
+\newtheorem{fact}{Fakt} %\begin{fact} ... \end{fact}
+\newtheorem*{fact*}{Fakt} %\begin{fact*} ... \end{fact*} Fakt
+\newtheorem*{observation*}{Obserwacja}
+
+\newtheorem{example}{Przykład}
+\newtheorem*{example*}{Przykład} %\begin{example} ... \end{example}
+\theoremstyle{definition}
+\newtheorem{definition}{Definicja}%\begin{definition}{} ... \end{definition}
+%\newtheorem*{definition*}{Definicja}
+%\newtheorem*{hipoterm*}{Hipoteza}%\begin{hipoterm*}[] ... \end{hipoterm*}
+\newtheorem{hipoterm}{Hipoteza}%\begin{hipoterm*}[] ... \end{hipoterm*}
+\theoremstyle{problem}
+\newtheorem{problem}{Problem}%\begin{problem}{} ... \end{problem}
+\newtheorem*{problem*}{Problem}
+
+\let\originalforall=\forall%FORALL
+\renewcommand{\forall}{\mathop{\vcenter{\hbox{\Large$\originalforall$}}}}
+\let\originalexists=\exists%EXISTS
+\renewcommand{\exists}{\mathop{\vcenter{\hbox{\Large$\originalexists$}}}}
+
+\usepackage{cancel} %skreślenie równania \xcancel{...} \cancel{} lub \bcancel{}
+
+\usepackage{amsfonts}
+
+\usepackage{comment}
+
+\usepackage{xcolor,colortbl}
+\usepackage{multirow}
+
+%\usepackage{wrapfig} %wrap text around figure
+
+\usepackage{pdfpages}%\includepdf{file}
+
+\usepackage{etoolbox}
+\let\bbordermatrix\bordermatrix
+\patchcmd{\bbordermatrix}{8.75}{4.75}{}{}
+\patchcmd{\bbordermatrix}{\left(}{\left[}{}{}
+\patchcmd{\bbordermatrix}{\right)}{\right]}{}{}
+%\bbordermatrix{}
+
+\allowdisplaybreaks
+
+\title{Struktury Dyskretne - Notatki}
+\author{Piotr Parysek\\
+\href{mailto:piotr.parysek@outlook.com}{piotr.parysek@outlook.com} }
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
