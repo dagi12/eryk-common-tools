@@ -4,3 +4,4 @@
 - Fix for remounting user directories on windows path (xdg restores default after mounting error)
 - Pulseaudio restart
 - Iphone connection
+    
