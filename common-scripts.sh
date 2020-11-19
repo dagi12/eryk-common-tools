@@ -8,20 +8,16 @@ for x in {1..13}; do
 done
 
 # rename loop suffix
-for file in *.pdf; do
-  mv "$file" "${file/.pdf/-old.pdf}"
-done
+for file in *.pdf; do mv "$file" "${file/.pdf/-old.pdf}"; done
 
 # rename fix recursively
-find . -name "*.java" -exec rename 's/\.java$/.kt/' '{}' \;
+find . -name "*.test.jsx" -exec rename 's/\.jsx$/.js/' '{}' \;
 
 # change encoding recursively
 find . -type f -print -exec iconv -f windows-1250 -t utf-8 -o {}.converted {} \; -exec mv {}.converted {} \;
 
 # change extension of all
-for file in *.txt; do
-    mv "$file" "$(basename "$file" .txt).md"
-done
+for file in *.txt; do mv "$file" "$(basename "$file" .txt).md"; done
 
 # convert to ts
 for file in *.js; do
@@ -36,3 +32,6 @@ for i in $(find . -iname "*.scss"); do git mv "$i" "$(echo $i | rev | cut -d '.'
 
 # current working directory
 echo $PWD
+
+# files do not contain word render
+grep -r --include=\*.jsx -L render ./src/
