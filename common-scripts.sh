@@ -4,7 +4,7 @@ set -x
 
 # directory loop
 for x in {1..13}; do
-    mkdir ./$x
+  mkdir ./$x
 done
 
 # rename loop suffix
@@ -21,7 +21,7 @@ for file in *.txt; do mv "$file" "$(basename "$file" .txt).md"; done
 
 # convert to ts
 for file in *.js; do
-    react-js-to-ts "$file"
+  react-js-to-ts "$file"
 done
 
 for f in $(find . -name '*.js'); do react-js-to-ts $f; done
@@ -35,3 +35,9 @@ echo $PWD
 
 # files do not contain word render
 grep -r --include=\*.jsx -L render ./src/
+
+# duplicate name search
+find . -type f | sed 's_.*/__' | sort | uniq -d |
+  while read fileName; do
+    find . -type f | grep "$fileName"
+  done
